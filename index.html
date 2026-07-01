@@ -1,0 +1,447 @@
+<html>
+<head>
+<title>Jeff Molofee — Developer Portfolio</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<meta name="apple-itunes-app" content="app-id=913831902" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+/* ── Layout: Full-bleed image + gradient fade into content, oversized index number ── */
+.alt6-list { display:flex; flex-direction:column; gap:40px; margin-bottom:60px; }
+
+.alt6-card {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #1c2a3a;
+    position: relative;
+    background: #0a0f1a;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+.alt6-card:hover {
+    border-color: #2a4a72;
+    box-shadow: 0 8px 48px rgba(20,70,150,0.18);
+}
+
+.alt6-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.alt6-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+.alt6-img-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 60%;
+    background: linear-gradient(to bottom, transparent, #0a0f1a);
+    pointer-events: none;
+}
+
+.alt6-num {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 130px;
+    font-weight: 900;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(74,144,217,0.18);
+    user-select: none;
+    pointer-events: none;
+    z-index: 2;
+    letter-spacing: -4px;
+}
+
+.alt6-body {
+    padding: 24px 32px 30px;
+    position: relative;
+}
+.alt6-body h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+.alt6-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+.alt6-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    border: 1px solid #1a3a5c;
+    background: #0a1520;
+    color: #4a90d9;
+    text-transform: uppercase;
+}
+.alt6-body .project-description {
+    font-size: 14px;
+    color: #8a95a6;
+    margin-bottom: 14px;
+    max-width: 780px;
+    line-height: 1.65;
+}
+.alt6-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+}
+.alt6-body .features-label { margin-bottom: 6px; }
+.alt6-body li { font-size: 13px; margin-bottom: 3px; }
+.alt6-body .project-link { margin-top: 20px; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="master">
+    <div class="container">
+
+        <div class="site-header">
+            <img src="logo.png" class="noborder" alt="NeHe Logo" />
+        </div>
+
+        <!-- ======= Windows Apps ======= -->
+        <div class="section-title">Windows Apps</div>
+        <div class="alt6-list">
+
+            <div class="alt6-card">
+                <div class="alt6-num">01</div>
+                <div class="alt6-img-wrap"><img src="llm_training_studio.jpg" alt="LLM Training Studio" /></div>
+                <div class="alt6-body">
+                    <h1>LLM Training Studio</h1>
+                    <div class="alt6-meta">
+                        <span class="alt6-tag">Python</span>
+                        <span class="alt6-tag">Flask</span>
+                        <span class="alt6-tag">LoRA · QLoRA</span>
+                        <span class="alt6-tag">GGUF</span>
+                    </div>
+                    <p class="project-description">A local LLM fine-tuning studio built with Python and Flask. Train a custom AI model on your own Q&amp;A data using LoRA / QLoRA — entirely on your machine, no cloud, no account required. Runs in your browser at <strong>http://localhost:5001</strong>.</p>
+                    <div class="alt6-cols">
+                        <div>
+                            <div class="features-label">Core</div>
+                            <ul>
+                                <li>Web-based Training Studio UI</li>
+                                <li>LoRA and 4-bit QLoRA fine-tuning</li>
+                                <li>Multi-model support</li>
+                                <li>GGUF export (q4_k_m, q8_0, f16, q4_0)</li>
+                                <li>Auto-registers with Ollama</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="features-label">Tools</div>
+                            <ul>
+                                <li>Built-in chat server at localhost:5000</li>
+                                <li>Live CPU, RAM, GPU &amp; VRAM monitor</li>
+                                <li>Package Manager tab</li>
+                                <li>No HuggingFace account required</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="project-link" href="https://github.com/NeHeGL/llm-training-studio">View Source on GitHub</a>
+                </div>
+            </div>
+
+            <div class="alt6-card">
+                <div class="alt6-num">02</div>
+                <div class="alt6-img-wrap"><img src="camera_effects_playground.jpg" alt="Camera Effects Playground" /></div>
+                <div class="alt6-body">
+                    <h1>Camera Effects Playground</h1>
+                    <div class="alt6-meta">
+                        <span class="alt6-tag">Python</span>
+                        <span class="alt6-tag">PyQt6</span>
+                        <span class="alt6-tag">OpenCV</span>
+                        <span class="alt6-tag">MediaPipe</span>
+                    </div>
+                    <p class="project-description">A real-time webcam effects application. All processing runs locally — no browser, no cloud, no external services. Built alongside my kids, who contributed ideas and tested effects live.</p>
+                    <div class="alt6-cols">
+                        <div>
+                            <div class="features-label">Effects</div>
+                            <ul>
+                                <li>22 real-time special effects</li>
+                                <li>Background replacement via MediaPipe</li>
+                                <li>Blur, Solid Color, Custom Image modes</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="features-label">Output</div>
+                            <ul>
+                                <li>Snapshot output to PNG</li>
+                                <li>Video recording to AVI</li>
+                                <li>Multi-camera device support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="project-link" href="https://github.com/NeHeGL/camera-effects">View Source on GitHub</a>
+                </div>
+            </div>
+
+            <div class="alt6-card">
+                <div class="alt6-num">03</div>
+                <div class="alt6-img-wrap"><img src="dmgconverter.jpg" alt="DmgConverter" /></div>
+                <div class="alt6-body">
+                    <h1>DmgConverter</h1>
+                    <div class="alt6-meta">
+                        <span class="alt6-tag">C++</span>
+                        <span class="alt6-tag">Portable</span>
+                        <span class="alt6-tag">Zero deps</span>
+                    </div>
+                    <p class="project-description">Convert Apple Disk Images (.dmg) to ISO / IMG on Windows — with zero dependencies and no installer required. Dual-mode: drag &amp; drop GUI or CLI.</p>
+                    <div class="alt6-cols">
+                        <div>
+                            <div class="features-label">Formats</div>
+                            <ul>
+                                <li>Outputs .iso (HFS+) or .img (GPT/EFI)</li>
+                                <li>Optional .vmdk for VirtualBox</li>
+                                <li>ZLIB, RAW, ADC, BZ2 block types</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="features-label">Distribution</div>
+                            <ul>
+                                <li>No VC++ Redistributable needed</li>
+                                <li>Written in C++ — no external libraries</li>
+                                <li>Single portable .exe</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="project-link" href="https://github.com/NeHeGL/DmgConverter">View Source on GitHub</a>
+                </div>
+            </div>
+
+            <div class="alt6-card">
+                <div class="alt6-num">04</div>
+                <div class="alt6-img-wrap"><img src="mame-ao.jpg" alt="mame-ao" /></div>
+                <div class="alt6-body">
+                    <h1>mame-ao</h1>
+                    <div class="alt6-meta">
+                        <span class="alt6-tag">C#</span>
+                        <span class="alt6-tag">Web UI</span>
+                        <span class="alt6-tag">MAME</span>
+                    </div>
+                    <p class="project-description">A fork of the original mame-ao project, revamped with a completely redesigned web-based UI. Run MAME easily — automatic download and setup of all required files on the fly.</p>
+                    <div class="alt6-cols">
+                        <div>
+                            <div class="features-label">Features</div>
+                            <ul>
+                                <li>Completely redesigned web-based UI</li>
+                                <li>Auto-downloads MAME &amp; support files</li>
+                                <li>Fetches ROMs from archive.org &amp; BitTorrent</li>
+                                <li>Simple launcher — just run and play</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="project-link" href="https://github.com/NeHeGL/mame-ao">View Source on GitHub</a>
+                </div>
+            </div>
+
+            <div class="alt6-card">
+                <div class="alt6-num">05</div>
+                <div class="alt6-img-wrap"><img src="frogs-and-flies.jpg" alt="Frogs and Flies" /></div>
+                <div class="alt6-body">
+                    <h1>Frogs and Flies</h1>
+                    <div class="alt6-meta">
+                        <span class="alt6-tag">Python</span>
+                        <span class="alt6-tag">Pygame</span>
+                        <span class="alt6-tag">Atari 2600</span>
+                        <span class="alt6-tag">2-Player</span>
+                    </div>
+                    <p class="project-description">A faithful Python/pygame reimplementation of the classic Frogs and Flies (Activision, 1982) for the Atari 2600. Two frogs compete to catch the most flies using their tongues. Jump between lily pads, avoid the pond, and out-eat your opponent!</p>
+                    <div class="alt6-cols">
+                        <div>
+                            <div class="features-label">Gameplay</div>
+                            <ul>
+                                <li>2-player local versus</li>
+                                <li>Pixel-art Atari 2600 aesthetic</li>
+                                <li>Tongue mechanic to catch flies</li>
+                                <li>Lily pad platforming</li>
+                                <li>First to 10 flies wins</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="features-label">Controls</div>
+                            <ul>
+                                <li>P1: Arrow Keys + Space</li>
+                                <li>P2: WASD + F</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="project-link" href="https://github.com/NeHeGL/Frogs-and-Flies">View Source on GitHub</a>
+                </div>
+            </div>
+
+
+            <div class="alt6-card">
+                <div class="alt6-num">06</div>
+                <div class="alt6-img-wrap"><img src="pfx_unpacker.jpg" alt="PFX Unpacker" /></div>
+                <div class="alt6-body">
+                    <h1>PFX Unpacker</h1>
+                    <div class="alt6-meta">
+                        <span class="alt6-tag">Python</span>
+                        <span class="alt6-tag">Portable</span>
+                        <span class="alt6-tag">Atari ST</span>
+                    </div>
+                    <p class="project-description">Decompress Atari ST executables packed with PFX / PFXPAK — on Windows, with no dependencies and no installer required. Browse for a packed .prg, set the output path, and unpack in one click.</p>
+                    <div class="alt6-cols">
+                        <div>
+                            <div class="features-label">Supported</div>
+                            <ul>
+                                <li>PFX / PFXPAK packed .prg files</li>
+                                <li>Detects packer version automatically</li>
+                                <li>Reports packed &amp; unpacked sizes</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="features-label">Distribution</div>
+                            <ul>
+                                <li>Single portable .exe</li>
+                                <li>No installer required</li>
+                                <li>Runs on Windows out of the box</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="project-link" href="https://github.com/NeHeGL/pfx-unpacker">View Source on GitHub</a>
+                </div>
+            </div>
+
+            <div class="alt6-card">
+                <div class="alt6-num">07</div>
+                <div class="alt6-img-wrap"><img src="retromovies.jpg" alt="RetroMovies" /></div>
+                <div class="alt6-body">
+                    <h1>RetroMovies</h1>
+                    <div class="alt6-meta">
+                        <span class="alt6-tag">C++</span>
+                        <span class="alt6-tag">Win32</span>
+                        <span class="alt6-tag">Family</span>
+                    </div>
+                    <p class="project-description">A Windows desktop app for families who love classic films and want a simple way to keep track of what they have watched, what they want to revisit, and what they want to recommend next.</p>
+                    <div class="alt6-cols">
+                        <div>
+                            <div class="features-label">Features</div>
+                            <ul>
+                                <li>Curated collection of classic movies</li>
+                                <li>Mark titles watched, rate &amp; comment</li>
+                                <li>Poster previews and metadata</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="features-label">Sorting</div>
+                            <ul>
+                                <li>By genre, title, year, box office revenue</li>
+                                <li>Lightweight — built with C++ and Win32</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="project-link" href="https://github.com/NeHeGL/RetroMovies">View Source on GitHub</a>
+                </div>
+            </div>
+
+        </div><!-- /alt6-list windows -->
+
+        <!-- ======= iOS Apps ======= -->
+        <div class="section-title">iOS Apps</div>
+        <div class="alt6-list">
+
+            <div class="alt6-card">
+                <div class="alt6-num">08</div>
+                <div class="alt6-img-wrap"><img src="lord-of-the-skies.jpg" alt="Lord of the Skies" /></div>
+                <div class="alt6-body">
+                    <h1>Lord of the Skies</h1>
+                    <div class="alt6-meta">
+                        <span class="alt6-tag">iOS</span>
+                        <span class="alt6-tag">OpenGL</span>
+                        <span class="alt6-tag">GameCenter</span>
+                    </div>
+                    <p class="project-description">Experience pixel graphics at their finest in this never-ending battle against the birds. Travel from grasslands to barren volcanic wastelands. Mount your Pegasus, grab your lance — fulfill your destiny!</p>
+                    <div class="alt6-cols">
+                        <div>
+                            <div class="features-label">Gameplay</div>
+                            <ul>
+                                <li>Birds have 31 different skills</li>
+                                <li>7 unique areas, 5 levels per area</li>
+                                <li>Hidden holiday themes</li>
+                                <li>No hidden fees / No Ads</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="features-label">Platform</div>
+                            <ul>
+                                <li>Leaderboards for points &amp; kills</li>
+                                <li>Saves personal best on device</li>
+                                <li>Touch screen &amp; MFi Gamepad</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="press-quotes" style="margin-top:14px;">
+                        iOSAppSpy &mdash; <a href="http://iosappspy.com/lord-skies-game-app-iphone-ipad-review/">4.5 out of 5 Stars</a><br>
+                        AppAdvice &mdash; <a href="http://appadvice.com/appnn/2014/10/appadvice-daily-tetris-like-action-and-80s-racing-with-our-best-new-games">A Glowing Podcast Review by Robin Rhys</a><br>
+                        TouchArcade &mdash; <a href="http://toucharcade.com/2014/10/08/lord-of-the-skies/"><i>"I'm really surprised with just how much I am enjoying playing Lord of the Skies"</i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alt6-card">
+                <div class="alt6-num">09</div>
+                <div class="alt6-img-wrap"><img src="timeless.jpg" alt="Timeless Demo" /></div>
+                <div class="alt6-body">
+                    <h1>Timeless Demo</h1>
+                    <div class="alt6-meta">
+                        <span class="alt6-tag">iOS</span>
+                        <span class="alt6-tag">OpenGL</span>
+                        <span class="alt6-tag">1994 Demo</span>
+                    </div>
+                    <p class="project-description">Re-live the past — watch Tran's legendary 1994 Timeless Demo on your iPhone, iPad or iPod Touch. A constantly warping background, original soundtrack, and animated sprites.</p>
+                    <div class="alt6-cols">
+                        <div>
+                            <div class="features-label">Features</div>
+                            <ul>
+                                <li>Pause and fast-forward support</li>
+                                <li>Behind-the-scenes breakdown</li>
+                                <li>Interactive tint control</li>
+                                <li>OpenGL — smooth on all devices</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /alt6-list ios -->
+
+    </div><!-- /container -->
+
+    <div class="footer">
+      <div class="footer-inner">
+        <div class="footer-col">
+            <h2>About</h2>
+            Programmer, Father, Apple Fan<br>
+            Used to run <a href="http://nehe.gamedev.net">nehe.gamedev.net</a>
+        </div>
+        <div class="footer-col">
+            <h2>Contact</h2>
+            <a href="https://www.linkedin.com/in/jmolofee/">LinkedIn</a><br>
+            <a href="https://github.com/NeHeGL">GitHub</a><br>
+            <a href="https://twitter.com/NeHe">Twitter</a>
+        </div>
+        <div class="footer-col">
+            <h2>Misc</h2>
+            <b>iOS Apps</b> are no longer available<br>
+            Thank you for visiting my site!
+        </div>
+        <div class="footer-col footer-logo">
+            <img src="apple.png" class="noborder" alt="Apple logo" /><br><br>
+            <b>2014 - 2026 Jeff Molofee</b>
+        </div>
+      </div><!-- /footer-inner -->
+    </div>
+
+</div>
+</body>
+</html>
