@@ -6,31 +6,51 @@
 <meta name="apple-itunes-app" content="app-id=913831902" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
-/* ── Sidebar list + single detail pane — only one full write-up on screen at a time ── */
-.container.wide { max-width: 1280px; }
-
-.project-layout {
-	display: flex;
-	gap: 30px;
-	align-items: flex-start;
-	margin-bottom: 50px;
+/* ── Monochrome Print: black canvas, crisp white print-card boxes, sharp serif, full-color screenshots ── */
+:root {
+	--page-bg: #000000;
+	--text: #161616;
+	--muted: #4a4a4a;
+	--heading: #0a0a0a;
+	--accent: #b3261e;
+	--card-bg: #ffffff;
+	--card-border: #161616;
+	--serif: Georgia, 'Times New Roman', Cambria, serif;
 }
+
+body { background-color: var(--page-bg); color: var(--text); font-family: var(--serif); }
+.master { background: var(--page-bg); }
+h1 { color: var(--heading); font-family: var(--serif); }
+a, a:visited { color: var(--accent); }
+a:hover { color: #7a1a14; }
+li { color: var(--muted); }
+.site-header { border-bottom: 1px solid #333; }
+.project-description { color: var(--muted); }
+.features-label { color: var(--accent); font-family: var(--serif); font-style: italic; text-transform: none; letter-spacing: 0; font-size: 13px; }
+.press-quotes { color: #6a6a6a; }
+.press-quotes a { color: var(--accent); }
+
+.container.wide { max-width: 1280px; }
+.project-layout { display: flex; gap: 26px; align-items: flex-start; margin-bottom: 50px; }
 
 .project-sidebar {
 	flex: 0 0 300px;
-	border: 1px solid #1c2a3a;
-	border-radius: 14px;
-	background: #0f1623;
+	border: 1px solid var(--card-border);
+	border-radius: 0;
+	background: var(--card-bg);
 	padding: 8px;
 }
 
 .project-sidebar-heading {
-	font-size: 10.5px;
+	font-size: 11px;
 	font-weight: 700;
 	text-transform: uppercase;
-	letter-spacing: 1.5px;
-	color: #4a90d9;
-	padding: 12px 12px 6px;
+	letter-spacing: 2px;
+	color: var(--heading);
+	font-family: var(--serif);
+	padding: 14px 12px 8px;
+	border-bottom: 1px solid var(--card-border);
+	margin-bottom: 4px;
 }
 
 .nav-item {
@@ -41,23 +61,24 @@
 	text-align: left;
 	background: transparent;
 	border: none;
-	border-radius: 8px;
-	padding: 8px 10px;
+	border-radius: 0;
+	padding: 9px 10px;
 	cursor: pointer;
 	font-family: inherit;
-	color: #b0b8c6;
-	margin-bottom: 2px;
+	color: var(--muted);
+	margin-bottom: 0;
 }
-.nav-item:hover { background: #142032; }
-.nav-item.active { background: #17324f; color: #ffffff; }
+.nav-item:hover { background: #f2f2f2; }
+.nav-item.active { background: var(--heading); color: #ffffff; }
+.nav-item.active .nav-tag { color: #c9c9c9; }
 
 .nav-thumb {
 	flex: 0 0 40px;
 	width: 40px;
 	height: 40px;
-	background: #060a12;
-	border-radius: 6px;
-	border: 1px solid #1e2d42;
+	background: #f2f2f2;
+	border-radius: 0;
+	border: 1px solid var(--card-border);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -66,46 +87,65 @@
 .nav-thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
 .nav-text { min-width: 0; flex: 1; }
-.nav-title { font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.nav-tag { font-size: 10.5px; color: #5a6577; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
+.nav-title { font-size: 13.5px; font-weight: 700; font-family: var(--serif); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-tag { font-size: 10px; color: #8a8a8a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; text-transform: uppercase; letter-spacing: 0.5px; }
+.nav-item.active .nav-tag { color: #c9c9c9; }
 
 .project-detail {
 	flex: 1;
 	min-width: 0;
-	background: #0f1623;
-	border: 1px solid #1c2a3a;
-	border-radius: 14px;
-	padding: 30px 34px 34px;
+	background: var(--card-bg);
+	border: 1px solid var(--card-border);
+	border-radius: 0;
+	padding: 34px 38px 38px;
 }
-.project-detail h1 { font-size: 26px; }
-.detail-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.project-detail h1 { font-size: 32px; font-weight: 700; }
+.detail-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
 .detail-tag {
 	font-size: 10px;
 	font-weight: 700;
 	letter-spacing: 1px;
-	padding: 2px 10px;
-	border-radius: 20px;
-	border: 1px solid #1a3a5c;
-	background: #0a1520;
-	color: #4a90d9;
+	padding: 3px 11px;
+	border-radius: 0;
+	border: 1px solid var(--heading);
+	background: transparent;
+	color: var(--heading);
 	text-transform: uppercase;
+	font-family: Georgia, serif;
 }
+
+/* Polaroid-framed photo, full color, straight (no tilt, no hover effect) */
 .detail-img-box {
 	width: 100%;
-	max-height: 440px;
-	background: #060a12;
-	border-radius: 10px;
-	border: 1px solid #1e2d42;
+	max-height: 480px;
+	background: #ffffff;
+	border: 1px solid #ddd;
+	border-radius: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-	margin-bottom: 20px;
+	margin: 6px 0 26px;
+	padding: 14px 14px 30px;
+	box-shadow: 0 10px 24px rgba(0,0,0,0.18);
 }
-.detail-img-box img { max-width: 100%; max-height: 440px; object-fit: contain; display: block; }
-.project-detail .project-description { max-width: 780px; margin-bottom: 18px; }
+.detail-img-box img {
+	max-width: 100%;
+	max-height: 400px;
+	object-fit: contain;
+	display: block;
+}
+.project-detail .project-description { max-width: 780px; margin-bottom: 20px; font-size: 16px; line-height: 1.7; }
 .detail-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
-.project-detail .project-link { margin-top: 20px; }
+.project-detail .project-link {
+	margin-top: 20px;
+	border-radius: 0;
+	border: 1px solid var(--heading);
+	color: var(--heading);
+	background: transparent;
+	font-family: var(--serif);
+}
+.project-detail .project-link:hover { background: var(--heading); border-color: var(--heading); color: #fff; }
 
 @media (max-width: 860px) {
 	.project-layout { flex-direction: column; }
@@ -181,21 +221,42 @@ PROJECTS.forEach(function (p) {
 	sections[p.section].push(p);
 });
 
-var navHtml = '';
-order.forEach(function (sectionName) {
-	navHtml += '<div class="project-sidebar-heading">' + sectionName + '</div>';
-	navHtml += sections[sectionName].map(function (p) {
-		return '' +
-			'<button class="nav-item" data-id="' + p.id + '">' +
-				'<div class="nav-thumb"><img src="' + p.image + '" alt="" loading="lazy" /></div>' +
-				'<div class="nav-text">' +
-					'<div class="nav-title">' + p.title + '</div>' +
-					'<span class="nav-tag">' + p.tags.join(' · ') + '</span>' +
-				'</div>' +
-			'</button>';
-	}).join('');
-});
-document.getElementById('sidebar').innerHTML = navHtml;
+var activeProjectId = PROJECTS[0].id;
+
+function navItemHtml(p) {
+	return '' +
+		'<button class="nav-item" data-id="' + p.id + '">' +
+			'<div class="nav-thumb"><img src="' + p.image + '" alt="" loading="lazy" /></div>' +
+			'<div class="nav-text">' +
+				'<div class="nav-title">' + p.title + '</div>' +
+				'<span class="nav-tag">' + p.tags.join(' · ') + '</span>' +
+			'</div>' +
+		'</button>';
+}
+
+function renderSidebar() {
+	var navHtml = '';
+	order.forEach(function (sectionName) {
+		navHtml += '<div class="project-sidebar-heading">' + sectionName + '</div>';
+		navHtml += sections[sectionName].map(navItemHtml).join('');
+	});
+	document.getElementById('sidebar').innerHTML = navHtml;
+
+	var navItems = document.querySelectorAll('.nav-item');
+	navItems.forEach(function (btn) {
+		if (btn.getAttribute('data-id') === activeProjectId) btn.classList.add('active');
+		btn.addEventListener('click', function () {
+			navItems.forEach(function (b) { b.classList.remove('active'); });
+			btn.classList.add('active');
+			activeProjectId = btn.getAttribute('data-id');
+			var project = PROJECTS.filter(function (p) { return p.id === activeProjectId; })[0];
+			renderDetail(project);
+			if (window.innerWidth <= 860) {
+				document.getElementById('detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}
+		});
+	});
+}
 
 function renderDetail(p) {
 	document.getElementById('detail').innerHTML = '' +
@@ -208,21 +269,64 @@ function renderDetail(p) {
 		pressHtml(p.pressQuotes);
 }
 
-var navItems = document.querySelectorAll('.nav-item');
-navItems.forEach(function (btn) {
-	btn.addEventListener('click', function () {
-		navItems.forEach(function (b) { b.classList.remove('active'); });
-		btn.classList.add('active');
-		var project = PROJECTS.filter(function (p) { return p.id === btn.getAttribute('data-id'); })[0];
-		renderDetail(project);
-		if (window.innerWidth <= 860) {
-			document.getElementById('detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
-		}
-	});
-});
-
-navItems[0].classList.add('active');
+renderSidebar();
 renderDetail(PROJECTS[0]);
+
+/* Live re-sort of Windows Apps by most recent GitHub activity (pushed_at).
+   Cached in localStorage for an hour to stay well under the unauthenticated
+   GitHub API rate limit; falls back silently to the original order on any
+   failure (offline, rate-limited, etc). */
+(function sortWindowsAppsByRecency() {
+	var CACHE_KEY = 'nehe_repo_pushed_cache_v1';
+	var CACHE_TTL_MS = 60 * 60 * 1000;
+	var windowsApps = sections['Windows Apps'];
+	if (!windowsApps) return;
+
+	function repoSlug(link) {
+		if (!link) return null;
+		var m = link.match(/^https:\/\/github\.com\/([^\/]+\/[^\/]+)\/?$/i);
+		return m ? m[1] : null;
+	}
+
+	function applySort(pushedMap) {
+		windowsApps.sort(function (a, b) {
+			var slugA = repoSlug(a.link);
+			var slugB = repoSlug(b.link);
+			var ta = (slugA && pushedMap[slugA]) ? new Date(pushedMap[slugA]).getTime() : -Infinity;
+			var tb = (slugB && pushedMap[slugB]) ? new Date(pushedMap[slugB]).getTime() : -Infinity;
+			return tb - ta;
+		});
+		renderSidebar();
+	}
+
+	var cachedRaw = null;
+	try { cachedRaw = JSON.parse(localStorage.getItem(CACHE_KEY)); } catch (e) {}
+	if (cachedRaw && cachedRaw.timestamp && (Date.now() - cachedRaw.timestamp) < CACHE_TTL_MS && cachedRaw.data) {
+		applySort(cachedRaw.data);
+		return;
+	}
+
+	var slugs = windowsApps.map(function (p) { return repoSlug(p.link); }).filter(Boolean);
+	Promise.allSettled(slugs.map(function (slug) {
+		return fetch('https://api.github.com/repos/' + slug)
+			.then(function (res) { if (!res.ok) throw new Error('bad status'); return res.json(); })
+			.then(function (data) { return { slug: slug, pushed_at: data.pushed_at }; });
+	})).then(function (results) {
+		var pushedMap = {};
+		var anySucceeded = false;
+		results.forEach(function (r) {
+			if (r.status === 'fulfilled' && r.value && r.value.pushed_at) {
+				pushedMap[r.value.slug] = r.value.pushed_at;
+				anySucceeded = true;
+			}
+		});
+		if (!anySucceeded) return;
+		try {
+			localStorage.setItem(CACHE_KEY, JSON.stringify({ timestamp: Date.now(), data: pushedMap }));
+		} catch (e) {}
+		applySort(pushedMap);
+	}).catch(function () { /* network unavailable — keep original order */ });
+})();
 </script>
 </body>
 </html>
