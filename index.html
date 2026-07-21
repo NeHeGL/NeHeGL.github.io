@@ -1,0 +1,282 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Jeff Molofee — Developer Portfolio</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<meta name="apple-itunes-app" content="app-id=913831902" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+/* ── Monochrome Print: black canvas, crisp white print-card boxes, sharp serif, full-color screenshots ── */
+:root {
+	--page-bg: #000000;
+	--text: #161616;
+	--muted: #4a4a4a;
+	--heading: #0a0a0a;
+	--accent: #b3261e;
+	--card-bg: #ffffff;
+	--card-border: #161616;
+	--serif: Georgia, 'Times New Roman', Cambria, serif;
+}
+
+body { background-color: var(--page-bg); color: var(--text); font-family: var(--serif); }
+.master { background: var(--page-bg); }
+h1 { color: var(--heading); font-family: var(--serif); }
+a, a:visited { color: var(--accent); }
+a:hover { color: #7a1a14; }
+li { color: var(--muted); }
+.site-header { border-bottom: 1px solid #333; }
+.project-description { color: var(--muted); }
+.features-label { color: var(--accent); font-family: var(--serif); font-style: italic; text-transform: none; letter-spacing: 0; font-size: 13px; }
+.press-quotes { color: #6a6a6a; }
+.press-quotes a { color: var(--accent); }
+
+.container.wide { max-width: 1280px; }
+.project-layout { display: flex; gap: 26px; align-items: flex-start; margin-bottom: 50px; }
+
+.project-sidebar {
+	flex: 0 0 300px;
+	border: 1px solid var(--card-border);
+	border-radius: 0;
+	background: var(--card-bg);
+	padding: 8px;
+}
+
+.project-sidebar-heading {
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: var(--heading);
+	font-family: var(--serif);
+	padding: 14px 12px 8px;
+	border-bottom: 1px solid var(--card-border);
+	margin-bottom: 4px;
+}
+
+.nav-item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	width: 100%;
+	text-align: left;
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	padding: 9px 10px;
+	cursor: pointer;
+	font-family: inherit;
+	color: var(--muted);
+	margin-bottom: 0;
+}
+.nav-item:hover { background: #f2f2f2; }
+.nav-item.active { background: var(--heading); color: #ffffff; }
+.nav-item.active .nav-tag { color: #c9c9c9; }
+
+.nav-thumb {
+	flex: 0 0 40px;
+	width: 40px;
+	height: 40px;
+	background: #f2f2f2;
+	border-radius: 0;
+	border: 1px solid var(--card-border);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+.nav-thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+.nav-text { min-width: 0; flex: 1; }
+.nav-title { font-size: 13.5px; font-weight: 700; font-family: var(--serif); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-tag { font-size: 10px; color: #8a8a8a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; text-transform: uppercase; letter-spacing: 0.5px; }
+.nav-item.active .nav-tag { color: #c9c9c9; }
+
+.project-detail {
+	flex: 1;
+	min-width: 0;
+	background: var(--card-bg);
+	border: 1px solid var(--card-border);
+	border-radius: 0;
+	padding: 34px 38px 38px;
+}
+.project-detail h1 { font-size: 32px; font-weight: 700; }
+.detail-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.detail-tag {
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	padding: 3px 11px;
+	border-radius: 0;
+	border: 1px solid var(--heading);
+	background: transparent;
+	color: var(--heading);
+	text-transform: uppercase;
+	font-family: Georgia, serif;
+}
+
+/* Polaroid-framed photo, full color, straight (no tilt, no hover effect) */
+.detail-img-box {
+	width: 100%;
+	max-height: 480px;
+	background: #ffffff;
+	border: 1px solid #ddd;
+	border-radius: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	margin: 6px 0 26px;
+	padding: 14px 14px 30px;
+	box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+.detail-img-box img {
+	max-width: 100%;
+	max-height: 400px;
+	object-fit: contain;
+	display: block;
+}
+.project-detail .project-description { max-width: 780px; margin-bottom: 20px; font-size: 16px; line-height: 1.7; }
+.detail-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+.project-detail .project-link {
+	margin-top: 20px;
+	border-radius: 0;
+	border: 1px solid var(--heading);
+	color: var(--heading);
+	background: transparent;
+	font-family: var(--serif);
+}
+.project-detail .project-link:hover { background: var(--heading); border-color: var(--heading); color: #fff; }
+
+@media (max-width: 860px) {
+	.project-layout { flex-direction: column; }
+	.project-sidebar { width: 100%; flex: 1 1 auto; }
+	.project-detail { padding: 24px; }
+}
+</style>
+</head>
+<body>
+<div class="master">
+    <div class="container wide">
+
+        <div class="site-header">
+            <img src="logo.png" class="noborder" alt="NeHe Logo" />
+        </div>
+
+        <div class="project-layout">
+            <div class="project-sidebar" id="sidebar"></div>
+            <div class="project-detail" id="detail"></div>
+        </div>
+
+    </div><!-- /container -->
+
+    <div class="footer">
+      <div class="footer-inner">
+        <div class="footer-col">
+            <h2>About</h2>
+            Programmer, Father, Apple Fan<br>
+            Used to run <a href="http://nehe.gamedev.net">nehe.gamedev.net</a>
+        </div>
+        <div class="footer-col">
+            <h2>Contact</h2>
+            <a href="https://www.linkedin.com/in/jmolofee/">LinkedIn</a><br>
+            <a href="https://github.com/NeHeGL">GitHub</a><br>
+            <a href="https://twitter.com/NeHe">Twitter</a>
+        </div>
+        <div class="footer-col">
+            <h2>Misc</h2>
+            <b>iOS Apps</b> are no longer available<br>
+            Thank you for visiting my site!
+        </div>
+        <div class="footer-col footer-logo">
+            <img src="apple.png" class="noborder" alt="Apple logo" /><br><br>
+            <b>2014 - 2026 Jeff Molofee</b>
+        </div>
+      </div><!-- /footer-inner -->
+    </div>
+
+</div>
+
+<script src="js/projects-data.js"></script>
+<script>
+function tagsHtml(tags) {
+	return tags.map(function (t) { return '<span class="detail-tag">' + t + '</span>'; }).join('');
+}
+function featuresHtml(features) {
+	return features.map(function (group) {
+		return '<div><div class="features-label">' + group.label + '</div><ul>' +
+			group.items.map(function (i) { return '<li>' + i + '</li>'; }).join('') +
+			'</ul></div>';
+	}).join('');
+}
+function pressHtml(p) {
+	if (!p) return '';
+	return '<div class="press-quotes" style="margin-top:16px;">' +
+		p.map(function (q) { return q.source + ' &mdash; ' + q.html; }).join('<br>') +
+		'</div>';
+}
+var sections = {};
+var order = [];
+PROJECTS.forEach(function (p) {
+	if (!sections[p.section]) { sections[p.section] = []; order.push(p.section); }
+	sections[p.section].push(p);
+});
+
+if (sections['Windows Apps']) {
+	sections['Windows Apps'].sort(function (a, b) {
+		return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+	});
+}
+
+var activeProjectId = sections[order[0]][0].id;
+
+function navItemHtml(p) {
+	return '' +
+		'<button class="nav-item" data-id="' + p.id + '">' +
+			'<div class="nav-thumb"><img src="' + p.image + '" alt="" loading="lazy" /></div>' +
+			'<div class="nav-text">' +
+				'<div class="nav-title">' + p.title + '</div>' +
+				'<span class="nav-tag">' + p.tags.join(' · ') + '</span>' +
+			'</div>' +
+		'</button>';
+}
+
+function renderSidebar() {
+	var navHtml = '';
+	order.forEach(function (sectionName) {
+		navHtml += '<div class="project-sidebar-heading">' + sectionName + '</div>';
+		navHtml += sections[sectionName].map(navItemHtml).join('');
+	});
+	document.getElementById('sidebar').innerHTML = navHtml;
+
+	var navItems = document.querySelectorAll('.nav-item');
+	navItems.forEach(function (btn) {
+		if (btn.getAttribute('data-id') === activeProjectId) btn.classList.add('active');
+		btn.addEventListener('click', function () {
+			navItems.forEach(function (b) { b.classList.remove('active'); });
+			btn.classList.add('active');
+			activeProjectId = btn.getAttribute('data-id');
+			var project = PROJECTS.filter(function (p) { return p.id === activeProjectId; })[0];
+			renderDetail(project);
+			if (window.innerWidth <= 860) {
+				document.getElementById('detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}
+		});
+	});
+}
+
+function renderDetail(p) {
+	document.getElementById('detail').innerHTML = '' +
+		'<h1>' + p.title + '</h1>' +
+		'<div class="detail-meta">' + tagsHtml(p.tags) + '</div>' +
+		'<div class="detail-img-box"><img src="' + p.image + '" alt="' + p.title + '" /></div>' +
+		'<p class="project-description">' + p.description + '</p>' +
+		'<div class="detail-cols">' + featuresHtml(p.features) + '</div>' +
+		(p.link ? '<a class="project-link" href="' + p.link + '">View Source on GitHub</a>' : '') +
+		pressHtml(p.pressQuotes);
+}
+
+renderSidebar();
+renderDetail(PROJECTS.filter(function (p) { return p.id === activeProjectId; })[0]);
+</script>
+</body>
+</html>
