@@ -273,6 +273,51 @@ var PROJECTS = [
 	},
 
 	{
+		id: "germguardian",
+		section: "Windows Apps",
+		title: "GermGuardian Tray",
+		tags: ["C#", "Bluetooth LE", "WinForms", "No Sideloading"],
+		image: "germguardian.jpg",
+		description: "A native Windows system tray app to control GermGuardian's BLE-connected air purifiers — no need to sideload an app onto your phone. The command encryption and pairing scheme were reverse engineered from scratch via BLE traffic capture, HTTPS interception, and static binary analysis.",
+		features: [
+			{ label: "Core", items: [
+				"Live air quality, filter %, and UV bulb % dashboard",
+				"Power, UV, Timer, and Speed controls",
+				"Runs quietly in the system tray"
+			]},
+			{ label: "Pairing", items: [
+				"Recovers or pairs a device's BLE key automatically",
+				"Multi-device support with saved profiles",
+				"Single self-contained .exe — no installer required"
+			]}
+		],
+		link: "https://github.com/NeHeGL/GermGuardian"
+	},
+
+	{
+		id: "x670e-e",
+		section: "Windows Apps",
+		title: "X670E-E Board Map",
+		tags: ["C#", "WinForms", "SMBIOS", "PCIe"],
+		image: "x670e-e.jpg",
+		description: "A Windows desktop tool that overlays live hardware info onto a diagram of the ASUS ROG STRIX X670E-E Gaming WiFi — so you can see at a glance which M.2 slots, DIMMs, and PCIe devices are populated, how lanes are shared, and whether your memory layout looks healthy. Board-specific; other X670E variants are refused at launch.",
+		features: [
+			{ label: "Live Overlay", items: [
+				"M.2_1–M.2_4: model, size, PCIe link width/speed",
+				"DIMM A1/A2/B1/B2 mapping with size, speed &amp; EXPO",
+				"GPU lane status — flags when M.2 cuts x16 to x8",
+				"CPU badge on the socket"
+			]},
+			{ label: "Distribution", items: [
+				"Self-contained single-file .exe",
+				"No .NET install or admin rights required",
+				"ROG STRIX X670E-E only"
+			]}
+		],
+		link: "https://github.com/NeHeGL/X670E-E"
+	},
+
+	{
 		id: "lord-of-the-skies",
 		section: "iOS Apps",
 		title: "Lord of the Skies",
