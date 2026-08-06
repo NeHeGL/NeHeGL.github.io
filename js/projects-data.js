@@ -161,18 +161,18 @@ var PROJECTS = [
 		title: "TXT2IMG",
 		tags: ["C#", "WinUI 3", "Stable Diffusion XL", "100% Local"],
 		image: "txt2img.jpg",
-		description: "Generate images from text entirely on your own PC, then copy the result straight to your clipboard. No account, no API keys, no cloud — everything runs locally on your GPU, with img2img reference photo support.",
+		description: "Generate images from text entirely on your own PC, then copy the result straight to your clipboard. No account, no API keys, no cloud — everything runs locally on your GPU.",
 		features: [
 			{ label: "Features", items: [
-				"9 style presets — Cartoon, Watercolor, Photorealistic &amp; more",
-				"Aspect ratio picker, correctly scaled per model",
-				"Reference photo (img2img) with Creativity slider",
+				"39 style presets — Oil Painting, Anime, Cyberpunk &amp; more",
+				"Aspect ratio picker (Square, Landscape/Portrait)",
+				"Max Detail option for extra inference steps",
 				"5 variations generated per prompt"
 			]},
 			{ label: "Models", items: [
 				"Stable Diffusion XL via OnnxStack &amp; DirectML",
-				"DreamShaper XL (fast) and SDXL Base",
-				"Models auto-download on first use",
+				"DreamShaper XL Lightning, distilled for speed",
+				"Model auto-downloads on first use",
 				"Copy to clipboard or save as PNG"
 			]}
 		],
