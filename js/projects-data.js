@@ -74,10 +74,10 @@ var PROJECTS = [
 	{
 		id: "mame-ao",
 		section: "Windows Apps",
-		title: "mame-ao",
+		title: "MAME-AO (fork)",
 		tags: ["C#", "Web UI", "MAME"],
 		image: "mame-ao.jpg",
-		description: "A fork of the original mame-ao project, revamped with a completely redesigned web-based UI. Run MAME easily — automatic download and setup of all required files on the fly.",
+		description: "A fork of the original mame-ao project, revamped with a completely redesigned web-based UI. Run MAME easily — automatic download and setup of all required files on the fly. The redesigned UI here went on to inspire changes now adopted in the original mame-ao project.",
 		features: [
 			{ label: "Features", items: [
 				"Completely redesigned web-based UI",
