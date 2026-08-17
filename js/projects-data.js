@@ -143,7 +143,7 @@ var PROJECTS = [
 		description: "Convert GFA-BASIC tokenized .gfa source files back into readable .lst listings — on Windows, with no dependencies and no installer required. Browse for a .gfa file and convert it in one click.",
 		features: [
 			{ label: "Supported", items: [
-				"GFA-BASIC tokenized .gfa source (file-format versions 3 &amp; 4)",
+				"GFA-BASIC 3.0 through 3.78+ tokenized .gfa source",
 				"Detects GFA-Basic Editor version when available",
 				"Reconstructs indentation, comments &amp; control flow"
 			]},
