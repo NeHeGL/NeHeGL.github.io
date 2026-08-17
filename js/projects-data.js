@@ -135,6 +135,28 @@ var PROJECTS = [
 	},
 
 	{
+		id: "gfa-detokenizer",
+		section: "Windows Apps",
+		title: "GFA Detokenizer",
+		tags: ["Python", "Portable", "Atari ST"],
+		image: "gfa-detokenizer.jpg",
+		description: "Convert GFA-BASIC tokenized .gfa source files back into readable .lst listings — on Windows, with no dependencies and no installer required. Browse for a .gfa file and convert it in one click.",
+		features: [
+			{ label: "Supported", items: [
+				"GFA-BASIC tokenized .gfa source (file-format versions 3 &amp; 4)",
+				"Detects GFA-Basic Editor version when available",
+				"Reconstructs indentation, comments &amp; control flow"
+			]},
+			{ label: "Distribution", items: [
+				"Single portable .exe",
+				"No installer required",
+				"Runs on Windows out of the box"
+			]}
+		],
+		link: "https://github.com/NeHeGL/GFA-Detokenizer"
+	},
+
+	{
 		id: "retro-movies",
 		section: "Windows Apps",
 		title: "Retro Movies",
