@@ -135,6 +135,50 @@ var PROJECTS = [
 	},
 
 	{
+		id: "fire-unpacker",
+		section: "Windows Apps",
+		title: "Fire Unpacker",
+		tags: ["Python", "Portable", "Atari ST"],
+		image: "fire-unpacker.jpg",
+		description: "Decompress Atari ST executables packed with Pack-Fire (Axe of Delight) — on Windows, with no dependencies and no installer required. Browse for a packed .prg, set the output path, and unpack in one click.",
+		features: [
+			{ label: "Supported", items: [
+				"Pack-Fire v1.x self-packed executables (verified)",
+				"Pack-Fire v2 \"FIRE\"-header files (unverified)",
+				"Reports packed &amp; unpacked sizes"
+			]},
+			{ label: "Distribution", items: [
+				"Single portable .exe",
+				"No installer required",
+				"Runs on Windows out of the box"
+			]}
+		],
+		link: "https://github.com/NeHeGL/Fire-Unpacker"
+	},
+
+	{
+		id: "ice-unpacker",
+		section: "Windows Apps",
+		title: "Ice Unpacker",
+		tags: ["Python", "Portable", "Atari ST"],
+		image: "ice-unpacker.jpg",
+		description: "Decompress Atari ST executables packed with Pack-Ice (\"ICE!\" signature) — on Windows, with no dependencies and no installer required. Browse for a packed .prg, set the output path, and unpack in one click.",
+		features: [
+			{ label: "Supported", items: [
+				"Pack-Ice (\"ICE!\") packed .prg files",
+				"Reports compressed span &amp; unpacked size",
+				"Handles files with an embedded Ice block"
+			]},
+			{ label: "Distribution", items: [
+				"Single portable .exe",
+				"No installer required",
+				"Runs on Windows out of the box"
+			]}
+		],
+		link: "https://github.com/NeHeGL/Ice-Unpacker"
+	},
+
+	{
 		id: "gfa-detokenizer",
 		section: "Windows Apps",
 		title: "GFA Detokenizer",
