@@ -8,19 +8,21 @@ var PROJECTS = [
 		title: "LLM Training Studio",
 		tags: ["Python", "Flask", "LoRA · QLoRA", "GGUF"],
 		image: "llm-training-studio.jpg",
-		description: "A local LLM fine-tuning studio built with Python and Flask. Train a custom AI model on your own Q&amp;A data using LoRA / QLoRA — entirely on your machine, no cloud, no account required. Runs in your browser at <strong>http://localhost:5001</strong>.",
+		description: "A local LLM fine-tuning studio built with Python and Flask. Train a custom AI model on your own Q&amp;A data using LoRA / QLoRA — entirely on your machine, no cloud, no account required. Works on NVIDIA GPUs from 8 GB up to 96 GB, with safe settings chosen for you. Runs in your browser at <strong>http://localhost:5001</strong>.",
 		features: [
 			{ label: "Core", items: [
 				"Web-based Training Studio UI",
-				"LoRA and 4-bit QLoRA fine-tuning",
-				"Multi-model support",
-				"GGUF export (q4_k_m, q8_0, f16, q4_0)",
+				"LoRA and 4-bit QLoRA fine-tuning, answer-only loss",
+				"Verified, ungated model catalog (Qwen3.5, Phi-4-mini, OLMo 3, Gemma 4 and more)",
+				"Automatic epoch &amp; batch schedule, VRAM-aware",
+				"GGUF export (q4_k_m, q5_k_m, q6_k, q8_0, iq4_xs, f16) with imatrix option",
 				"Auto-registers with Ollama"
 			]},
 			{ label: "Tools", items: [
-				"Built-in chat server at localhost:5000",
+				"Pre-flight checks for GPU memory, disk space &amp; model size",
+				"Chat tester on llama.cpp, optional GPU build (about 3x faster)",
 				"Live CPU, RAM, GPU &amp; VRAM monitor",
-				"Package Manager tab",
+				"Custom models &amp; optional Hugging Face token",
 				"No HuggingFace account required"
 			]}
 		],
@@ -36,7 +38,8 @@ var PROJECTS = [
 		description: "A real-time webcam effects application. All processing runs locally — no browser, no cloud, no external services. Built alongside my kids, who contributed ideas and tested effects live.",
 		features: [
 			{ label: "Effects", items: [
-				"22 real-time special effects",
+				"31 real-time special effects",
+				"Face-tracked effects: Zombie, Skeleton, Mummy, Vampire, Sid Eyes, Hamster Eyes &amp; more",
 				"Background replacement via MediaPipe",
 				"Blur, Solid Color, Custom Image modes"
 			]},
@@ -51,7 +54,7 @@ var PROJECTS = [
 
 	{
 		id: "dmg-converter",
-		section: "Windows Apps",
+		section: "Apple",
 		title: "Dmg Converter",
 		tags: ["C++", "Portable", "Zero deps"],
 		image: "dmg-converter.jpg",
@@ -73,7 +76,7 @@ var PROJECTS = [
 
 	{
 		id: "mame-ao",
-		section: "Windows Apps",
+		section: "Retro & Games",
 		title: "MAME-AO (fork)",
 		tags: ["C#", "Web UI", "MAME"],
 		image: "mame-ao.jpg",
@@ -91,7 +94,7 @@ var PROJECTS = [
 
 	{
 		id: "frogs-and-flies",
-		section: "Windows Apps",
+		section: "Atari 2600",
 		title: "Frogs and Flies",
 		tags: ["Python", "Pygame", "Atari 2600", "2-Player"],
 		image: "frogs-and-flies.jpg",
@@ -114,7 +117,7 @@ var PROJECTS = [
 
 	{
 		id: "pfx-unpack",
-		section: "Windows Apps",
+		section: "Packers",
 		title: "PFX Unpacker",
 		tags: ["Python", "Portable", "Atari ST"],
 		image: "pfx-unpack.jpg",
@@ -136,7 +139,7 @@ var PROJECTS = [
 
 	{
 		id: "fire-unpacker",
-		section: "Windows Apps",
+		section: "Packers",
 		title: "Fire Unpacker",
 		tags: ["Python", "Portable", "Atari ST"],
 		image: "fire-unpacker.jpg",
@@ -158,16 +161,17 @@ var PROJECTS = [
 
 	{
 		id: "ice-unpacker",
-		section: "Windows Apps",
+		section: "Packers",
 		title: "Ice Unpacker",
 		tags: ["Python", "Portable", "Atari ST"],
 		image: "ice-unpacker.jpg",
 		description: "Decompress Atari ST executables packed with Pack-Ice (\"ICE!\" signature) — on Windows, with no dependencies and no installer required. Browse for a packed .prg, set the output path, and unpack in one click.",
 		features: [
 			{ label: "Supported", items: [
-				"Pack-Ice (\"ICE!\") packed .prg files",
+				"Pack-Ice (\"ICE!\" and \"Ice!\") packed .prg files",
 				"Reports compressed span &amp; unpacked size",
-				"Handles files with an embedded Ice block"
+				"Handles files with an embedded Ice block",
+				"Clean one-line errors on the command line"
 			]},
 			{ label: "Distribution", items: [
 				"Single portable .exe",
@@ -180,7 +184,7 @@ var PROJECTS = [
 
 	{
 		id: "gfa-detokenizer",
-		section: "Windows Apps",
+		section: "Atari ST",
 		title: "GFA Detokenizer",
 		tags: ["Python", "Portable", "Atari ST"],
 		image: "gfa-detokenizer.jpg",
@@ -202,7 +206,7 @@ var PROJECTS = [
 
 	{
 		id: "gfa-tokenizer",
-		section: "Windows Apps",
+		section: "Atari ST",
 		title: "GFA Tokenizer",
 		tags: ["Python", "Portable", "Atari ST"],
 		image: "gfa-tokenizer.jpg",
@@ -224,7 +228,7 @@ var PROJECTS = [
 
 	{
 		id: "retro-movies",
-		section: "Windows Apps",
+		section: "Retro & Games",
 		title: "Retro Movies",
 		tags: ["C++", "Win32", "Family"],
 		image: "retro-movies.jpg",
@@ -269,7 +273,7 @@ var PROJECTS = [
 
 	{
 		id: "neon-tetris",
-		section: "Windows Apps",
+		section: "Retro & Games",
 		title: "Neon Tetris",
 		tags: ["Python", "Pygame", "AI-Generated"],
 		image: "neon-tetris.jpg",
@@ -292,7 +296,7 @@ var PROJECTS = [
 
 	{
 		id: "install-macos",
-		section: "Windows Apps",
+		section: "Apple",
 		title: "Install macOS",
 		tags: ["PowerShell", "WSL2", "QEMU/KVM"],
 		image: "install-macos.jpg",
@@ -314,7 +318,7 @@ var PROJECTS = [
 
 	{
 		id: "atari-2600-disassembler",
-		section: "Windows Apps",
+		section: "Atari 2600",
 		title: "Atari 2600 Smart Disassembler",
 		tags: ["Python", "6502", "Atari 2600", "Reverse Engineering"],
 		image: "atari-2600-disassembler.jpg",
@@ -338,7 +342,7 @@ var PROJECTS = [
 
 	{
 		id: "atari-2600-assembler",
-		section: "Windows Apps",
+		section: "Atari 2600",
 		title: "Atari 2600 Assembler",
 		tags: ["Python", "6502", "Atari 2600", "Assembler"],
 		image: "atari-2600-assembler.jpg",
