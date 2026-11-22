@@ -32,7 +32,7 @@ var PROJECTS = [
 	{
 		id: "generate-3d-face-mesh",
 		section: "Windows Apps",
-		title: "Generate 3D Mesh",
+		title: "Generate 3D Face Mesh",
 		tags: ["Python", "FastAPI", "MediaPipe", "OBJ Export"],
 		image: "generate-3d-face-mesh.jpg",
 		description: "A small local app that builds a 3D mesh of your face from your webcam. Move your head slowly around and it keeps the best photo for each angle, then blends them into one seamless skin texture. Face tracking runs in the browser with MediaPipe, bundled, so no internet is needed. Runs at <strong>http://localhost:8780</strong>.",
