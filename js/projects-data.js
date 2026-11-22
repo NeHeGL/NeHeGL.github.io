@@ -30,6 +30,30 @@ var PROJECTS = [
 	},
 
 	{
+		id: "generate-3d-face-mesh",
+		section: "Windows Apps",
+		title: "Generate 3D Mesh",
+		tags: ["Python", "FastAPI", "MediaPipe", "OBJ Export"],
+		image: "generate-3d-face-mesh.jpg",
+		description: "A small local app that builds a 3D mesh of your face from your webcam. Move your head slowly around and it keeps the best photo for each angle, then blends them into one seamless skin texture. Face tracking runs in the browser with MediaPipe, bundled, so no internet is needed. Runs at <strong>http://localhost:8780</strong>.",
+		features: [
+			{ label: "Scan", items: [
+				"Live face tracking and pose-coverage grid",
+				"Best photo kept for each head angle",
+				"Live mesh preview with scan accuracy and skin-mapped stats",
+				"Per-person profiles"
+			]},
+			{ label: "Output", items: [
+				"Seamless blended skin texture",
+				"OBJ model with MTL and skin.png",
+				"In-app 3D viewer",
+				"Runs fully offline"
+			]}
+		],
+		link: "https://github.com/NeHeGL/Generate-3D-Face-Mesh"
+	},
+
+	{
 		id: "camera-effects",
 		section: "Windows Apps",
 		title: "Camera Effects Playground",
