@@ -3,6 +3,30 @@
 var PROJECTS = [
 
 	{
+		id: "ai-avatar-studio",
+		section: "Windows Apps",
+		title: "AI Avatar Studio",
+		tags: ["Python", "FastAPI", "llama.cpp", "Qwen3-TTS", "Whisper"],
+		image: "ai-avatar-studio.jpg",
+		description: "Talk to someone you miss. Give it a few photos, a voice recording and what you can tell it about a person, then have a spoken conversation with them: it listens (Whisper), thinks (a local Gemma chat model on llama.cpp), answers in a cloned voice (Qwen3-TTS) and animates the face with a lip-synced video (SoulX-FlashHead). Everything runs on your own PC &mdash; nothing is sent to anyone. Works on NVIDIA graphics cards with 16 GB or more (32 GB is best). One download, and the first run fetches the models and just works.",
+		features: [
+			{ label: "The person", items: [
+				"Face from your photos: webcam or upload, with plain-language photo checks",
+				"Voice cloned from up to 5 recordings",
+				"Facts: what you know about them, always treated as true",
+				"AI Learned: notes the avatar picks up in conversation, which you can read and edit"
+			]},
+			{ label: "The conversation", items: [
+				"Hands-free spoken chat, with your words shown as you speak",
+				"Replies start speaking while the model is still writing",
+				"Lip-synced face video for every reply, with gentle idle animation",
+				"Models chosen to fit your graphics card, fully offline after the first download"
+			]}
+		],
+		link: "https://github.com/NeHeGL/AI-Avatar-Studio"
+	},
+
+	{
 		id: "llm-training-studio",
 		section: "Windows Apps",
 		title: "LLM Training Studio",
