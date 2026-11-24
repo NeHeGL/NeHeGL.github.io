@@ -101,6 +101,28 @@ var PROJECTS = [
 	},
 
 	{
+		id: "audio-capture",
+		section: "Windows Apps",
+		title: "Audio Capture",
+		tags: ["Python", "WASAPI", "Portable"],
+		image: "audio-capture.jpg",
+		description: "Record what your PC is playing through speakers or headphones — not what a microphone picks up in the room. Uses Windows WASAPI loopback for a clean digital capture of browser audio, games, calls, and music, without room noise or Stereo Mix workarounds.",
+		features: [
+			{ label: "Capture", items: [
+				"WASAPI loopback from the active playback device",
+				"Live level meter while recording",
+				"Gain control with peak readout"
+			]},
+			{ label: "Edit &amp; export", items: [
+				"Interactive trim timeline with preview",
+				"Export WAV, OGG, FLAC, MP3, AIFF, AU &amp; more",
+				"Single portable .exe — no installer"
+			]}
+		],
+		link: "https://github.com/NeHeGL/Audio-Capture"
+	},
+
+	{
 		id: "dmg-converter",
 		section: "Apple",
 		title: "Dmg Converter",
