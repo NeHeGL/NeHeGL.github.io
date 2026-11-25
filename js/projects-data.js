@@ -327,14 +327,14 @@ var PROJECTS = [
 		features: [
 			{ label: "Features", items: [
 				"39 style presets — Oil Painting, Anime, Cyberpunk &amp; more",
-				"Aspect ratio picker (Square, Landscape/Portrait)",
-				"Max Detail option for extra inference steps",
+				"Resolution 768 or 896 px; optional 4K upscale",
+				"\"New Variation\" img2img on a selected result",
 				"5 variations generated per prompt"
 			]},
 			{ label: "Models", items: [
 				"Stable Diffusion XL via OnnxStack &amp; DirectML",
 				"DreamShaper XL Lightning, distilled for speed",
-				"Model auto-downloads on first use",
+				"Model auto-downloads on first use (resumable)",
 				"Copy to clipboard or save as PNG"
 			]}
 		],
